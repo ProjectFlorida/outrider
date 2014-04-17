@@ -8,9 +8,9 @@ class BaseHandler(tornado.web.RequestHandler):
     def db(self):
       config = self.load_db_config()
       return create_engine("postgresql://%s@%s/%s" %
-          (config.get('database', 'username'), config.get('database', 'host'),
-            config.get('database', 'database')))
+          (config['username'], config['host'], config['database']))
 
     @property
     def load_db_config(self):
+        print Database().load_config()
         return Database().load_config
