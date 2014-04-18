@@ -1,4 +1,9 @@
+PyYAML==3.11
+SQLAlchemy==0.8.3
+backports.ssl-match-hostname==3.4.0.2
 futures==2.1.5
+gnureadline==6.2.5
+psycopg2==2.5.2
 requests==1.2.3
-sqlalchemy==0.8.3
 tornado==3.2
+wsgiref==0.1.2

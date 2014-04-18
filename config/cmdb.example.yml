@@ -1,0 +1,4 @@
+database:
+  username: me
+  host: localhost
+  database: cmdb
