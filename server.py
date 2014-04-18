@@ -19,8 +19,6 @@ class Application(tornado.web.Application):
             (r"/", HomeHandler)
         ]
         settings = dict(
-            xsrf_cookies=True,
-            cookie_secret="GENERATE_A_VALUE",
             debug=True
         )
         tornado.web.Application.__init__(self, handlers, **settings)

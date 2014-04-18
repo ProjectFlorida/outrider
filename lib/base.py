@@ -1,3 +1,8 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
 import tornado.web
 import tornado.httpserver
 from sqlalchemy import create_engine
@@ -12,5 +17,4 @@ class BaseHandler(tornado.web.RequestHandler):
 
     @property
     def load_db_config(self):
-        print Database().load_config()
-        return Database().load_config
+        return Database().load_config()

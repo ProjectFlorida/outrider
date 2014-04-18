@@ -5,4 +5,4 @@ from lib.base import BaseHandler
 
 class HomeHandler(BaseHandler):
     def get(self):
-        return self.db
+        return self.db()
