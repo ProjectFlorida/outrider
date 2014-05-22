@@ -1,2 +1,3 @@
 *.pyc
 config/cmdb.yml
+config/cmdb.*.yml
