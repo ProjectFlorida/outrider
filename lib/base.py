@@ -9,11 +9,17 @@ from sqlalchemy import create_engine
 from utils.database import Database
 
 class BaseHandler(object):
+    """ This class is a base class for any subsequent classes requiring a
+    connection to the database. BaseRequestHandler inherits from This
+    class. """
+
     @property
     def db(self):
-	config = Database().load_config()
+        """ Fetch the database configuration for the environment, and
+        create an Engine object with the retrieved information. """
+        config = Database().load_config()
         return create_engine("postgresql://%s@%s/%s" %
-			(config['username'], config['host'], config['database']))
+                (config['username'], config['host'], config['database']))
 
     @property
     def load_db_config(self):

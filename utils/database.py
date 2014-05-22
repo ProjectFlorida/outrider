@@ -6,23 +6,23 @@ class Database(object):
     """ Generic class for handling database-related tasks. """
 
     def select_config_for_environment(self):
-	""" Read the value of env variable and load the property
-	database configuration based on the value of DB_ENV.
+        """ Read the value of env variable and load the property
+        database configuration based on the value of DB_ENV.
 
-	Takes no input and returns a string like 'production' or 'testing'."""
-	return os.getenv('DB_ENV', 'development')
+        Takes no input and returns a string like 'production' or 'testing'."""
+        return os.getenv('DB_ENV', 'development')
 
     def load_config(self):
         """ Pull the configuration off disk and parse the yml. Returns a dict
         containing a subset of the yml from the 'database' section. """
-	environment = self.select_config_for_environment()
-	config_src = ("%s/config/cmdb.%s.yml" % (
-	    (os.path.join(os.path.dirname(__file__), '..')),
-	    environment))
-	config = open(config_src)
+        environment = self.select_config_for_environment()
+        config_src = ("%s/config/cmdb.%s.yml" % (
+            (os.path.join(os.path.dirname(__file__), '..')),
+            environment))
+        config = open(config_src)
 
         try:
-	   return yaml.load(config)['database']
-	except:
-	    print ("Ensure config/cmdb.%s.yml exists" % config_src)
+            return yaml.load(config)['database']
+        except:
+            print ("Ensure config/cmdb.%s.yml exists" % config_src)
             return None
