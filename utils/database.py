@@ -24,5 +24,5 @@ class Database(object):
         try:
             return yaml.load(config)['database']
         except:
-            print ("Ensure config/cmdb.%s.yml exists" % config_src)
+            print ("Ensure config/cmdb.%s.yml exists" % environment)
             return None
