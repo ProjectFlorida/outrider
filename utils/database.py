@@ -23,6 +23,6 @@ class Database(object):
 
         try:
             return yaml.load(config)['database']
-        except:
+        except IOError:
             print ("Ensure config/cmdb.%s.yml exists" % environment)
             return None

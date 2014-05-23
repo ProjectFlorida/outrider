@@ -18,8 +18,8 @@ class BaseHandler(object):
         """ Fetch the database configuration for the environment, and
         create an Engine object with the retrieved information. """
         config = Database().load_config()
-        return create_engine("postgresql://%s@%s/%s" %
-                (config['username'], config['host'], config['database']))
+        return create_engine("%s://%s@%s/%s" %
+                (config['adapter'], config['username'], config['host'], config['database']))
 
     @property
     def load_db_config(self):
