@@ -15,3 +15,9 @@ following:
 * `cp config/cmdb.example.yml config/cmdb.development.yml`
 * Edit config/cmdb.development.yml to match the setup you've got with PostgreSQL
 * Start the server with `python server.py`
+
+## License
+
+This project is licensed under Apache 2.0. For the full text of the license,
+check out the `LICENSE` file included (which should always be redistributed)
+with this project.
