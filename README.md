@@ -1,7 +1,7 @@
 # CMDB
 
 ## Purpose
-This project will be a central machine and resource database for systems,
+This project is a central machine and resource tracker for systems,
 databases,  and other operational infrastructure. It will focus on providing
 a unified interface to the Chef configuration management system and Amazon's
 public cloud.
