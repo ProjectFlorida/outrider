@@ -14,4 +14,14 @@ following:
 * `pip install -r requirements.txt`
 * `cp config/cmdb.example.yml config/cmdb.development.yml`
 * Edit config/cmdb.development.yml to match the setup you've got with PostgreSQL
-* Start the server with `python server.py`
+
+## Database
+This project uses [alembic](http://alembic.readthedocs.org/) to handle database
+migrations. It will be installed when you `pip install -r`, but you'll need to
+perform an initial migration once the database has been configured. This
+command will need to be run after the initial setup and after each subsequent
+update of the code:
+
+```
+PYTHONPATH=. alembic upgrade head
+```
