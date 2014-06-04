@@ -2,4 +2,4 @@ database:
   adapter: postgresql
   username: me
   host: localhost
-  database: cmdb
+  database: outrider

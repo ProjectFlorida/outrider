@@ -1,3 +1,4 @@
 *.pyc
-config/cmdb.yml
-config/cmdb.*.yml
+config/settings.yml
+config/settings.development.yml
+config/settings.production.yml
