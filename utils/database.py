@@ -16,7 +16,7 @@ class Database(object):
         """ Pull the configuration off disk and parse the yml. Returns a dict
         containing a subset of the yml from the 'database' section. """
         environment = self.select_config_for_environment()
-        config_src = ("%s/config/cmdb.%s.yml" % (
+        config_src = ("%s/config/settings.%s.yml" % (
             (os.path.join(os.path.dirname(__file__), '..')),
             environment))
         config = open(config_src)
@@ -24,5 +24,5 @@ class Database(object):
         try:
             return yaml.load(config)['database']
         except IOError:
-            print ("Ensure config/cmdb.%s.yml exists" % environment)
+            print ("Ensure config/settings.%s.yml exists" % environment)
             return None

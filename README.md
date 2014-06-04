@@ -1,4 +1,4 @@
-# CMDB
+# Outrider
 
 ## Purpose
 This project is a central machine and resource tracker for systems,
@@ -9,14 +9,14 @@ public cloud.
 ## Setup
 Ensure you have a python environment setup using 2.7 and `pip` available on the
 system. You'll also need PostgreSQL installed and a database which is dedicated
-to the CMDB.
+to outrider.
 
 Once you've got the prerequisites setup, clone this project, and then do the
 following:
 
 * `pip install -r requirements.txt`
-* `cp config/cmdb.example.yml config/cmdb.development.yml`
-* Edit config/cmdb.development.yml to match the setup you've got with PostgreSQL
+* `cp config/settings.example.yml config/settings.development.yml`
+* Edit config/settings.development.yml to match the setup you've got with PostgreSQL
 * Start the server with `python server.py`
 
 ## Database
