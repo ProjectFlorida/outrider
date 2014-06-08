@@ -15,6 +15,11 @@ from sqlalchemy import INTEGER, VARCHAR, Column
 
 
 def upgrade():
+    op.create_table('assets',
+                    Column('asset_id', INTEGER, primary_key=True),
+                    Column('state_id', INTEGER),
+                    Column('type_id', INTEGER))
+
     op.create_table('attributes',
                     Column('id', INTEGER, primary_key=True),
                     Column('name', VARCHAR(50), nullable=False))
@@ -30,6 +35,12 @@ def upgrade():
     op.create_table('tags',
                    Column('id', INTEGER, primary_key=True),
                    Column('name', VARCHAR(50), nullable=False))
+
+    op.create_foreign_key('fk_asset_state', 'assets', 'states',
+                         ['state_id'], ['id'])
+
+    op.create_foreign_key('fk_asset_type', 'assets', 'tags',
+                         ['type_id'], ['id'])
 
 
 def downgrade():
