@@ -8,6 +8,7 @@ import tornado.httpserver
 from sqlalchemy import create_engine
 from utils.database import Database
 
+
 class BaseHandler(object):
     """ This class is a base class for any subsequent classes requiring a
     connection to the database. BaseRequestHandler inherits from This
@@ -19,13 +20,15 @@ class BaseHandler(object):
         create an Engine object with the retrieved information. """
         config = Database().load_config()
         return create_engine("%s://%s@%s/%s" %
-                (config['adapter'], config['username'], config['host'], config['database']))
+                             (config['adapter'], config['username'],
+                              config['host'], config['database']))
 
     @property
     def load_db_config(self):
         """ Call the Database class to load and parse the configuration from
         yml on disk. Returns a dict. """
         return Database().load_config()
+
 
 class BaseRequestHandler(BaseHandler, tornado.web.RequestHandler):
     """ This class is the base for all the other handlers. You should always

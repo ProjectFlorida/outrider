@@ -1,6 +1,6 @@
-import ConfigParser
 import os
 import yaml
+
 
 class Database(object):
     """ Generic class for handling database-related tasks. """
@@ -19,10 +19,11 @@ class Database(object):
         config_src = ("%s/config/settings.%s.yml" % (
             (os.path.join(os.path.dirname(__file__), '..')),
             environment))
+
         config = open(config_src)
 
         try:
             return yaml.load(config)['database']
         except IOError:
-            print ("Ensure config/settings.%s.yml exists" % environment)
+            print "Ensure config/settings.%s.yml exists" % environment
             return None

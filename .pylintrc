@@ -1,0 +1,23 @@
+# -*- mode: conf -*-
+
+[FORMAT]
+max-line-length=100
+
+[MESSAGES CONTROL]
+# C0111 - Missing docstring
+# R0904 - too-many-public-methods
+# W0703 - Catching too general exception Exception
+# W0105 - String statement has no effect
+# W0142 - star-args
+# I0011 - locally disabled
+# R0903 - too-few-public-methods
+# R0913 - too-many-arguments
+# R0914 - too-many-locals
+disable=C0111,R0904,W0703,W0105,W0142,I0011,R0903,R0913,R0914
+
+[REPORTS]
+msg-template={path}:{line}: [{msg_id}({symbol}), {obj}] {msg}
+
+[SIMILARITIES]
+min-similarity-lines=8
+ignore-imports=yes
